@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var noteAdapter: RecyclerNoteAdapter
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,11 +29,13 @@ class MainActivity : AppCompatActivity() {
 
         val appDB = NoteDatabase.getDatabase(this@MainActivity)
 //        appDB.NoteDao().addNote(NoteModel(0, "Hey", "Hello dear, how are you?"))
+//        appDB.NoteDao().addNote(NoteModel(0,"IMS Data Report", "IMS report to be share on every Monday before 02 O'Clock "))
 //        appDB.NoteDao().addNote(NoteModel(0,"Android Meet", "Meeting at 11 O'Clock"))
+//        appDB.NoteDao().addNote(NoteModel(0, "MBR Meet", "Meeting is postponed till 20th June, 2023"))
 
         val listNotes = appDB.NoteDao().getAllNotes()
 
-       val deleteNote = appDB.NoteDao().deleteNote(2)
+//       val deleteNote = appDB.NoteDao().deleteNote(2)
 
         binding.rcViewNotes.layoutManager =
             StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
